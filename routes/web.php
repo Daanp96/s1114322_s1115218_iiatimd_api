@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/food', 'FoodController@index');
+
+Route::get('/ingredient', 'IngredientController@index');

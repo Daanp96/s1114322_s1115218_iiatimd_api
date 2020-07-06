@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use bfinlay\SpreadsheetSeeder\SpreadsheetSeeder;
 
-class FoodSeeder extends SpreadsheetSeeder
+class IngredientSeeder extends SpreadsheetSeeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class FoodSeeder extends SpreadsheetSeeder
      */
     public function run()
     {
-      $this->file = '/database/seeds/food.csv';
-      parent::run();
+        $this->file = '/database/seeds/ingredient.csv';
+        parent::run();
     }
 }
