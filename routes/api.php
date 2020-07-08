@@ -21,3 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/food', 'FoodController@index');
 
 Route::get('/ingredient', 'IngredientController@index');
+
+
+
+Route::post('register', 'AuthController@register');
+Route::post('login', 'AuthController@login');
+Route::post('logout', 'AuthController@logout');;
+Route::post('user', 'AuthController@getAuthUser');
