@@ -18,10 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/food', 'FoodController@index');
 
-Route::get('/ingredient', 'IngredientController@index');
-
+Route::group(['middleware' => 'jwt.auth'], function () {
+  Route::get('/food', 'FoodController@index');
+  Route::get('/ingredient', 'IngredientController@index');
+});
 
 
 Route::post('register', 'AuthController@register');
