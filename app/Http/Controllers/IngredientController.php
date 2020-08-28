@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ingredient;
-use DB;
+use App\Food;
 
 class IngredientController extends Controller
 {
@@ -14,10 +14,10 @@ class IngredientController extends Controller
 
     public function getFood(Request $request) {
       $currentId = $request->ingredient_id;
-      $currentIngredient = DB::table('ingredient')->where('id', $currentId)->first();
+      $currentIngredient = Ingredient::where('id', $currentId)->first();
 
       $currentName = $currentIngredient->name;
-      $collection = DB::table('food')->where('ingredients', 'LIKE', '%' . $currentName . '%')->get();
+      $collection = Food::where('ingredients', 'LIKE', '%' . $currentName . '%')->get();
 
       return response()->json($collection);
     }

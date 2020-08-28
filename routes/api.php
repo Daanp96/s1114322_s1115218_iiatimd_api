@@ -23,7 +23,7 @@ Route::group(['middleware' => 'jwt.auth'], function () {
   Route::get('/food', 'FoodController@index');
   Route::get('/ingredient', 'IngredientController@index');
   Route::get('/favorite', 'FavoriteController@index');
-
+  
   Route::post('/addfavorite', 'FavoriteController@add');
   Route::post('/removefavorite', 'FavoriteController@remove');
 
