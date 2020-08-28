@@ -26,6 +26,9 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 
   Route::post('/addfavorite', 'FavoriteController@add');
   Route::post('/removefavorite', 'FavoriteController@remove');
+
+  Route::post('/getfood', 'IngredientController@getFood');
+  Route::post('/getingredients', 'FoodController@getIngredients');
 });
 
 
